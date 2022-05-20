@@ -28,7 +28,7 @@ class Render:
         生成 html 文件
         """
         template = self._jinja_env.get_template(template_name)
-        with open(os.path.join(self._output_folder, filename), "w") as f:
+        with open(os.path.join(self._output_folder, filename), "w" , encoding="utf-8" ) as f:
             f.write(template.render(**context))
 
     def render_toc_md(self, title: str, headers: list) -> None:
